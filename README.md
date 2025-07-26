@@ -1,43 +1,32 @@
-# Astro Starter Kit: Minimal
+# Demo AI assistance + Baseline web features
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+Demo for my talk at I/O Extended 2025.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Not meant to be exhaustive; use this as starting point to customise to your own needs.
 
-## 🚀 Project Structure
+## Requirement
 
-Inside of your Astro project, you'll see the following folders and files:
+- Node v18.20.8 or v20.3.0, v22.0.0 or higher
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Created with Astro minimal starter template (`pnpm create astro -- --template minimal`).
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Installation
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. Fork/clone this repo
+2. Run `pnpm i` (or use other package manager)
+   - This should populate the `ai-utils/web-features` dir
+3. Copy `ai-utils/rules`  
+   - Cursor: `cp ai-utils/rules .cursor/rules`
+   - Windsurf: `cp ai-utils/rules .windsurf/rules`
+   - GitHub Copilot: `cp ai-utils/rules .github/instructions`
+   - Copy manually for other IDEs/extensions
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Prompt examples
 
-## 🧞 Commands
+Check Baseline status by file:
 
-All commands are run from the root of the project, from a terminal:
+> use rule `@check-baseline` on `@Popover.astro` and `@popover.css`
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+Ask to find and implement polyfill:
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+> use rule `@polyfill-baseline` for the Popover API
