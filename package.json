@@ -7,7 +7,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint"
+    "lint": "eslint",
+    "copy:wf": "if [ -d ai-utils/web-features ]; then rm -rf ai-utils/web-features; fi && mkdir -p ai-utils/web-features && cp -n node_modules/web-features/data.json node_modules/web-features/data.schema.json ai-utils/web-features",
+    "postinstall": "pnpm run copy:wf"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
@@ -18,6 +20,7 @@
     "@eslint/css": "^0.10.0",
     "@html-eslint/eslint-plugin": "^0.43.1",
     "eslint": "^9.32.0",
-    "eslint-plugin-astro": "^1.3.1"
+    "eslint-plugin-astro": "^1.3.1",
+    "web-features": "^2.42.0"
   }
 }
