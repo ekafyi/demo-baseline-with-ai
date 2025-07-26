@@ -1,0 +1,48 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Popover from "@/components/demo-popover/Popover.astro";
+
+const SAMPLE_DATA = {
+  "def-1": {
+    text: "itaque",
+    definition:
+      "Sint reprehenderit eu velit elit dolor nisi. Ullamco ut esse deserunt.",
+  },
+  "def-2": {
+    text: "lorem",
+    definition: "Excepteur id quis est qui eiusmod.",
+  },
+};
+---
+
+<Layout title="Demo Popover">
+  <h1 class="text-2xl font-bold mb-4">Demo Popover</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem sint
+    provident dolorem nemo, obcaecati corrupti,
+    <Popover
+      id="def-1"
+      elementType="trigger"
+      text={SAMPLE_DATA["def-1"].text}
+    />
+    repudiandae commodi ut, fugit ipsa a enim praesentium vero rem mollitia eveniet
+    ab repellendus. Hic reprehenderit praesentium repudiandae, cumque expedita minima
+    nemo dolores
+    <Popover
+      id="def-2"
+      elementType="trigger"
+      text={SAMPLE_DATA["def-2"].text}
+    />
+    eos error nobis dolore, ratione autem facilis, sed officiis ullam adipisci consequatur!
+    Quo hic tenetur nam fuga provident consectetur voluptas deserunt?
+  </p>
+
+  <aside class="definitions">
+    <Popover id="def-1" elementType="content" text={SAMPLE_DATA["def-1"].text}>
+      {SAMPLE_DATA["def-1"].definition}
+    </Popover>
+    <Popover id="def-2" elementType="content" text={SAMPLE_DATA["def-2"].text}>
+      {SAMPLE_DATA["def-2"].definition}
+    </Popover>
+  </aside>
+</Layout>

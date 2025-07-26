@@ -1,0 +1,42 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Select from "@/components/demo-select/Select.astro";
+
+const SAMPLE_DATA = [
+  {
+    value: "eur",
+    imageSrc:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/510px-Flag_of_Europe.svg.png",
+    currency: { short: "EUR", long: "Euro", symbol: "€" },
+  },
+  {
+    value: "gbp",
+    imageSrc:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/510px-Flag_of_the_United_Kingdom_%281-2%29.svg.png",
+    currency: { short: "GBP", long: "Great British Pound", symbol: "£" },
+  },
+  {
+    value: "usd",
+    imageSrc:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg/510px-Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg.png",
+    currency: { short: "USD", long: "United States Dollar", symbol: "$" },
+    selected: true,
+  },
+  {
+    value: "jpy",
+    imageSrc:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/510px-Flag_of_Japan.svg.png",
+    currency: { short: "JPY", long: "Japanese Yen", symbol: "¥" },
+  },
+  {
+    value: "bitcoin",
+    imageSrc:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/300px-Bitcoin.svg.png",
+    currency: { short: "BTC", long: "Bitcoin", symbol: "₿" },
+  },
+];
+---
+
+<Layout title="Example Foo">
+  <Select id="currency-select" options={SAMPLE_DATA} />
+</Layout>

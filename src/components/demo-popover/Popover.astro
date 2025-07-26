@@ -1,0 +1,35 @@
+---
+import "./popover.css";
+
+interface Props {
+  elementType: "trigger" | "content";
+  id: string;
+  text: string;
+}
+const { elementType, id, text } = Astro.props;
+---
+
+{
+  elementType === "trigger" ? (
+    <button
+      class="pop-trigger"
+      id={`trigger-${id}`}
+      popovertarget={id}
+      interesttarget={id}
+    >
+      {text}
+    </button>
+  ) : elementType === "content" ? (
+    <div class="pop-content" popover id={id} anchor={`trigger-${id}`}>
+      <dl>
+        <dt>{text}</dt>
+        <dd class="text-sm">
+          <slot />
+        </dd>
+      </dl>
+      <button popovertarget={id} popovertargetaction="hide">
+        close
+      </button>
+    </div>
+  ) : null
+}

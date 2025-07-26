@@ -1,0 +1,21 @@
+---
+interface Props {
+  value: string;
+  imageSrc: string;
+  currency: {
+    short: string;
+    long: string;
+    symbol: string;
+  };
+}
+const { value, imageSrc, currency } = Astro.props;
+---
+
+<option value={value}>
+  <img src={imageSrc} alt="" />
+  <div class="currency">
+    <div class="currency-short">{currency.short}</div>
+    <div class="currency-long">{currency.long}</div>
+  </div>
+  <div class="symbol" aria-hidden="true">{currency.symbol}</div>
+</option>

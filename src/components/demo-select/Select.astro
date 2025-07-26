@@ -1,0 +1,31 @@
+---
+import "./select.css";
+import SelectButton from "./SelectButton.html";
+import SelectOption from "./SelectOption.astro";
+
+interface Props {
+  id: string;
+  options: {
+    value: string;
+    imageSrc: string;
+    currency: {
+      short: string;
+      long: string;
+      symbol: string;
+    };
+  }[];
+}
+const { id, options } = Astro.props;
+---
+
+<label>
+  <div class="py-2">Currency</div>
+  <select name={id} class={id}>
+    <SelectButton />
+    {
+      options.map(({ value, imageSrc, currency }) => (
+        <SelectOption value={value} imageSrc={imageSrc} currency={currency} />
+      ))
+    }
+  </select>
+</label>

@@ -1,0 +1,55 @@
+.pop-content {
+  top: anchor(bottom);
+  left: anchor(center);
+  position-fallback: --fallbacks;
+  popover-hide-delay: 0.5s;
+}
+
+.pop-trigger {
+  popover-show-delay: 0.5s;
+}
+
+@position-fallback --fallbacks {
+  @try {
+    top: anchor(auto);
+    left: anchor(center);
+  }
+  @try {
+    top: anchor(auto);
+    right: anchor(center);
+  }
+}
+
+/* Visual styles only */
+@layer demo.base {
+  body {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+  }
+
+  .pop-trigger {
+    appearance: none;
+    color: blue;
+    font-size: inherit;
+    font-family: inherit;
+    border-bottom: 1px dashed currentColor;
+  }
+
+  .pop-content {
+    max-width: 30ch;
+    background: #333;
+    color: #fff;
+    font-size: 0.875rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    dt {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    button {
+      text-decoration: underline;
+    }
+  }
+}
